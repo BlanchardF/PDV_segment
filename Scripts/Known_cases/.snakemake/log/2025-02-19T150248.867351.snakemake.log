@@ -1,0 +1,436 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job             count
+------------  -------
+Alignement          8
+HMM_profiles        8
+HMM_search         10
+all                 1
+total              27
+
+Select jobs to execute...
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CMBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    jobid: 8
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 1415544'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/MdBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1415545'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/HdIV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_DRJ_alignement.sto
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_DRJ_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 1415546'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CcBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_HIM_alignement.sto
+    jobid: 5
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_HIM_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 1415547'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/HdIV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_HIM_alignement.sto
+    jobid: 7
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_HIM_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 1415548'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CcBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_DRJ_alignement.sto
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_DRJ_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 1415549'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CMBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1415550'.
+
+[Wed Feb 19 15:03:06 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/MdBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    jobid: 6
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 1415551'.
+[Wed Feb 19 15:03:32 2025]
+Finished job 8.
+1 of 27 steps (4%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:03:32 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm
+    jobid: 16
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 16 with external jobid 'Submitted batch job 1415552'.
+[Wed Feb 19 15:03:32 2025]
+Finished job 2.
+2 of 27 steps (7%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:03:32 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm
+    jobid: 10
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 1415553'.
+[Wed Feb 19 15:03:52 2025]
+Finished job 3.
+3 of 27 steps (11%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:03:52 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm
+    jobid: 11
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_DRJ_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 1415554'.
+[Wed Feb 19 15:03:52 2025]
+Finished job 5.
+4 of 27 steps (15%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:03:52 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm
+    jobid: 13
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_HIM_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 13 with external jobid 'Submitted batch job 1415555'.
+[Wed Feb 19 15:04:02 2025]
+Finished job 7.
+5 of 27 steps (19%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:02 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm
+    jobid: 15
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Hyposoter_didymator_HIM_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 15 with external jobid 'Submitted batch job 1415556'.
+[Wed Feb 19 15:04:12 2025]
+Finished job 1.
+6 of 27 steps (22%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:12 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm
+    jobid: 9
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_congregata_DRJ_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 1415557'.
+[Wed Feb 19 15:04:22 2025]
+Finished job 4.
+7 of 27 steps (26%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:22 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm
+    jobid: 12
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 12 with external jobid 'Submitted batch job 1415558'.
+[Wed Feb 19 15:04:32 2025]
+Finished job 6.
+8 of 27 steps (30%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:32 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm
+    jobid: 14
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 14 with external jobid 'Submitted batch job 1415559'.
+[Wed Feb 19 15:04:42 2025]
+Finished job 16.
+9 of 27 steps (33%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:42 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Hyposoter_didymator.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_Microplitis-HIM-Hyposoter_didymator.hmm
+    jobid: 26
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_Microplitis-HIM-Hyposoter_didymator.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM, target=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 26 with external jobid 'Submitted batch job 1415560'.
+[Wed Feb 19 15:04:42 2025]
+Finished job 10.
+10 of 27 steps (37%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:04:42 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Microplitis_demolitor-DRJ-Cotesia_congregata.hmm
+    jobid: 19
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Microplitis_demolitor-DRJ-Cotesia_congregata.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 19 with external jobid 'Submitted batch job 1415561'.
+[Wed Feb 19 15:05:02 2025]
+Finished job 11.
+11 of 27 steps (41%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:03 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+    jobid: 21
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 21 with external jobid 'Submitted batch job 1415562'.
+
+[Wed Feb 19 15:05:03 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Cotesia_congregata.hmm
+    jobid: 22
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Cotesia_congregata.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 22 with external jobid 'Submitted batch job 1415563'.
+[Wed Feb 19 15:05:03 2025]
+Finished job 13.
+12 of 27 steps (44%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:03 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+    jobid: 18
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm
+    wildcards: Species=Cotesia_congregata, Motif=HIM, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 18 with external jobid 'Submitted batch job 1415564'.
+[Wed Feb 19 15:05:12 2025]
+Finished job 15.
+13 of 27 steps (48%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:13 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+    jobid: 23
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=HIM, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 23 with external jobid 'Submitted batch job 1415565'.
+
+[Wed Feb 19 15:05:13 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Cotesia_congregata.hmm
+    jobid: 24
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Cotesia_congregata.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=HIM, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 24 with external jobid 'Submitted batch job 1415566'.
+[Wed Feb 19 15:05:22 2025]
+Finished job 9.
+14 of 27 steps (52%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:22 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+    jobid: 17
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm
+    wildcards: Species=Cotesia_congregata, Motif=DRJ, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 17 with external jobid 'Submitted batch job 1415567'.
+[Wed Feb 19 15:05:32 2025]
+Finished job 12.
+15 of 27 steps (56%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:32 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Hyposoter_didymator.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_Microplitis-DRJ-Hyposoter_didymator.hmm
+    jobid: 25
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_Microplitis-DRJ-Hyposoter_didymator.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ, target=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 25 with external jobid 'Submitted batch job 1415568'.
+[Wed Feb 19 15:05:33 2025]
+Finished job 14.
+16 of 27 steps (59%) done
+Select jobs to execute...
+
+[Wed Feb 19 15:05:33 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Microplitis_demolitor-HIM-Cotesia_congregata.hmm
+    jobid: 20
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Microplitis_demolitor-HIM-Cotesia_congregata.hmm; Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm
+    wildcards: Species=Microplitis_demolitor, Motif=HIM, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 20 with external jobid 'Submitted batch job 1415569'.
+[Wed Feb 19 15:05:53 2025]
+Finished job 26.
+17 of 27 steps (63%) done
+[Wed Feb 19 15:06:13 2025]
+Error in rule HMM_search:
+    jobid: 21
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415562
+
+Error executing rule HMM_search on cluster (jobid: 21, external: Submitted batch job 1415562, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.mdzpypyq/snakejob.HMM_search.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 15:06:23 2025]
+Finished job 19.
+18 of 27 steps (67%) done
+[Wed Feb 19 15:06:33 2025]
+Error in rule HMM_search:
+    jobid: 18
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415564
+
+Error executing rule HMM_search on cluster (jobid: 18, external: Submitted batch job 1415564, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.mdzpypyq/snakejob.HMM_search.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 15:06:43 2025]
+Finished job 22.
+19 of 27 steps (70%) done
+[Wed Feb 19 15:06:53 2025]
+Error in rule HMM_search:
+    jobid: 23
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415565
+
+Error executing rule HMM_search on cluster (jobid: 23, external: Submitted batch job 1415565, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.mdzpypyq/snakejob.HMM_search.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 15:07:03 2025]
+Error in rule HMM_search:
+    jobid: 17
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415567
+
+Error executing rule HMM_search on cluster (jobid: 17, external: Submitted batch job 1415567, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.mdzpypyq/snakejob.HMM_search.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 15:07:13 2025]
+Finished job 24.
+20 of 27 steps (74%) done
+[Wed Feb 19 15:07:33 2025]
+Finished job 20.
+21 of 27 steps (78%) done
+[Wed Feb 19 15:07:43 2025]
+Finished job 25.
+22 of 27 steps (81%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-19T150248.867351.snakemake.log

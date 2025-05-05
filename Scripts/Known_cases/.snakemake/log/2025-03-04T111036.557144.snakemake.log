@@ -1,0 +1,165 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                 count
+----------------  -------
+Create_db_Genes         3
+Create_db_Genome        3
+all                     1
+total                   7
+
+Select jobs to execute...
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1419079'.
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Hyposoter_didymator_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    wildcards: Species=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 1419080'.
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genome:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/Microplitis_demolitor_mmseqs2_db
+    jobid: 5
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/Microplitis_demolitor_mmseqs2_db
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 1419081'.
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_congregata_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 1419082'.
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genome:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/Cotesia_congregata_mmseqs2_db
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/Cotesia_congregata_mmseqs2_db
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1419083'.
+
+[Tue Mar  4 11:10:57 2025]
+rule Create_db_Genome:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Hyposoter_didymator.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/Hyposoter_didymator_mmseqs2_db
+    jobid: 6
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/Hyposoter_didymator_mmseqs2_db
+    wildcards: Species=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 1419084'.
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genes:
+    jobid: 2
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    shell:
+        
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419079
+
+Error executing rule Create_db_Genes on cluster (jobid: 2, external: Submitted batch job 1419079, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genes.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genes:
+    jobid: 3
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Hyposoter_didymator_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    shell:
+        
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Segments/Hyposoter_didymator_segments.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419080
+
+Error executing rule Create_db_Genes on cluster (jobid: 3, external: Submitted batch job 1419080, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genes.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genome:
+    jobid: 5
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/Microplitis_demolitor_mmseqs2_db
+    shell:
+        
+                #Create a directory where the results will be written
+                mkdir -p /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/Microplitis_demolitor_mmseqs2_db
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419081
+
+Error executing rule Create_db_Genome on cluster (jobid: 5, external: Submitted batch job 1419081, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genome.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genes:
+    jobid: 1
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_congregata_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    shell:
+        
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_congregata_segments.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419082
+
+Error executing rule Create_db_Genes on cluster (jobid: 1, external: Submitted batch job 1419082, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genes.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genome:
+    jobid: 4
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/Cotesia_congregata_mmseqs2_db
+    shell:
+        
+                #Create a directory where the results will be written
+                mkdir -p /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/Cotesia_congregata_mmseqs2_db
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419083
+
+Error executing rule Create_db_Genome on cluster (jobid: 4, external: Submitted batch job 1419083, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genome.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Mar  4 11:11:32 2025]
+Error in rule Create_db_Genome:
+    jobid: 6
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genomes/Hyposoter_didymator.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/Hyposoter_didymator_mmseqs2_db
+    shell:
+        
+                #Create a directory where the results will be written
+                mkdir -p /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/
+                /beegfs/project/horizon/bin/miniconda3/bin createdb /beegfs/project/horizon/PDV_Segments/Data/Genomes/Hyposoter_didymator.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/Hyposoter_didymator_mmseqs2_db
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419084
+
+Error executing rule Create_db_Genome on cluster (jobid: 6, external: Submitted batch job 1419084, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.2tim6tx6/snakejob.Create_db_Genome.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-04T111036.557144.snakemake.log

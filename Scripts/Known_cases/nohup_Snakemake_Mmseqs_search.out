@@ -1,0 +1,81 @@
+nohup: les entrées sont ignorées
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                count
+---------------  -------
+Create_db_Genes        4
+all                    1
+total                  5
+
+Select jobs to execute...
+
+[Wed Apr  2 10:42:55 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1526815'.
+
+[Wed Apr  2 10:42:55 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 1526816'.
+
+[Wed Apr  2 10:42:55 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/Hyposoter_didymator.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    wildcards: Species=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 1526817'.
+
+[Wed Apr  2 10:42:56 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/Cotesia_Microplitis.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    wildcards: Species=Cotesia_Microplitis
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1526818'.
+[Wed Apr  2 10:43:12 2025]
+Finished job 2.
+1 of 5 steps (20%) done
+[Wed Apr  2 10:43:22 2025]
+Finished job 1.
+2 of 5 steps (40%) done
+[Wed Apr  2 10:43:32 2025]
+Finished job 3.
+3 of 5 steps (60%) done
+[Wed Apr  2 10:43:42 2025]
+Finished job 4.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Wed Apr  2 10:43:42 2025]
+localrule all:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db
+    jobid: 0
+    reason: Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    resources: mem_mb=1244, mem_mib=1187, disk_mb=1244, disk_mib=1187, tmpdir=/tmp
+
+[Wed Apr  2 10:43:42 2025]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2025-04-02T104225.191984.snakemake.log

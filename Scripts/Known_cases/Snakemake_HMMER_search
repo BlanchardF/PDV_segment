@@ -1,0 +1,123 @@
+#Activate conda :
+## conda activate /beegfs/data/bguinet/Bguinet_conda
+
+#Import python packages :
+import pandas as pd
+import re
+import os
+
+#Command lines :
+##DRY run :
+#nohup snakemake -j 200  -s Snakemake_HMMER_search -n --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err}  --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_HMMER_search.out &
+##Unlock :
+#nohup snakemake -j 200  -s Snakemake_HMMER_search --unlock --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err} ---constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_HMMER_search.out &
+##Real run :
+#nohup snakemake -j 200  -s Snakemake_HMMER_search --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err}  --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_HMMER_search.out &
+
+#Software :
+Clustal_Omega="/beegfs/home/fblanchard/miniconda3/bin/clustalo"
+HMMbuild="/beegfs/home/fblanchard/miniconda3/bin/hmmbuild"
+nHMMER="/beegfs/home/fblanchard/miniconda3/bin/nhmmer"
+
+#Data pathways :
+Genomes_paths="/beegfs/project/horizon/PDV_Segments/Data/Genomes/"
+Output_dir="/beegfs/project/horizon/PDV_Segments/Results/Known_cases/"
+Logs_dir="/beegfs/project/horizon/PDV_Segments/Logs/Known_cases/HMMER/"
+Scripts_dir="/beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/"
+DB_dir="/beegfs/project/horizon/PDV_Segments/Data/"
+
+#Liste d'espèces :
+Species=["Cotesia_congregata", "Microplitis_demolitor", "Hyposoter_didymator","Cotesia_Microplitis"]
+
+#Liste de BDD :
+Motifs=["DRJ","HIM"]
+
+# Dictionnaire associant chaque espèce à son suffixe
+species_suffix = {
+    "Cotesia_congregata": "BV",
+    "Microplitis_demolitor": "BV",
+    "Hyposoter_didymator": "IV",
+    "Cotesia_Microplitis" : "BV"   }
+
+
+target = {
+"Cotesia_congregata": ["Microplitis_demolitor"],
+    "Microplitis_demolitor": ["Cotesia_congregata"],
+    "Hyposoter_didymator": ["Microplitis_demolitor", "Cotesia_congregata"],  
+    "Cotesia_Microplitis": ["Hyposoter_didymator"]}
+
+all_hmm_search_targets = [ Output_dir+f"Search/{S}-{M}-{T}.hmm" for S in Species for M in Motifs for T in target[S] ]
+
+
+# Générer la liste des noms raccourcis
+def shorten_species(species_name):
+    parts = species_name.split('_')
+    return f"{parts[0][0]}{parts[1][0]}"
+
+rule all:
+        input:
+                expand(Output_dir+"Alignement/{Species}_{Motif}_alignement.sto", Motif = Motifs, Species = Species),
+                expand(Output_dir+"Profile/{Species}_{Motif}.hmm", Motif = Motifs, Species = Species),
+                all_hmm_search_targets
+
+#Alignement multiple des motifs, choix de l'output en format stockholm car prit en charge par Hmmbuild : (Clustal Omega)
+rule Alignement:
+    params:
+        threads="4",
+        time="01:00:00",
+        mem="2G",
+        name="Ali_{Species}_{Motif}",
+        out=Logs_dir+"{Species}_{Motif}_Ali.out",
+        err=Logs_dir+"{Species}_{Motif}_Ali.error"
+    input:
+        lambda wildcards: DB_dir + f"{wildcards.Motif}/" + wildcards.Species[0] + wildcards.Species.split('_')[1][0] + species_suffix[wildcards.Species] + "_" + wildcards.Motif + ".fa"
+
+    output:
+        out=Output_dir+"Alignement/{Species}_{Motif}_alignement.sto"
+    shell:
+        """
+        {Clustal_Omega} -v -i {input} --out {output.out} --threads {params.threads} --outfmt=st -t DNA
+        """
+
+#Build HMM profiles
+##Format :  hmmbuild [options] <hmmfile_out> <msafile>
+rule HMM_profiles:
+        params:
+                threads="4",
+                time="01:00:00",
+                mem="2000M",
+                name="HMMbuild_{Species}_{Motif}",
+                out=Logs_dir+"{Species}_{Motif}_HMMbuild.out",
+                err=Logs_dir+"{Species}_{Motif}_HMMbuild.error"
+        input:
+                Ali=Output_dir+"Alignement/{Species}_{Motif}_alignement.sto"
+        output:
+                out=Output_dir+"Profile/{Species}_{Motif}.hmm"
+        shell:
+                """
+                {HMMbuild} --dna --cpu 4 {output.out} {input.Ali}
+                """
+
+
+
+rule HMM_search:
+    params:
+        threads="6",
+        time="01:00:00",
+        mem="2000M",
+        name="HMMsearch_{Species}_{Motif}",
+        out=Logs_dir+"{Species}_{Motif}_{target}_HMMsearch.out",
+        err=Logs_dir+"{Species}_{Motif}_{target}_HMMsearch.error"
+    input:
+        Profile=Output_dir+"Profile/{Species}_{Motif}.hmm",
+        Genome=Genomes_paths+"{target}.fa"
+    output:
+        out=Output_dir+"Search/{Species}-{Motif}-{target}.hmm"  
+    shell:
+        """
+        {nHMMER} --dna --cpu {params.threads} {input.Profile} {input.Genome} > {output.out}
+        """
+
+rule all_HMM_search:
+    input:
+        all_hmm_search_targets

@@ -1,0 +1,207 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job             count
+------------  -------
+Alignement          8
+HMM_profiles        8
+all                 1
+total              17
+
+Select jobs to execute...
+
+[Wed Feb 19 11:04:25 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CcBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 1415465'.
+
+[Wed Feb 19 11:04:25 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CMBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto
+    jobid: 8
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 1415466'.
+
+[Wed Feb 19 11:04:25 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/MdBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1415467'.
+
+[Wed Feb 19 11:04:25 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CcBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto
+    jobid: 5
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 1415468'.
+
+[Wed Feb 19 11:04:25 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/HdIV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto
+    jobid: 7
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 1415469'.
+
+[Wed Feb 19 11:04:26 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/HdIV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 1415470'.
+
+[Wed Feb 19 11:04:26 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CMBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1415471'.
+
+[Wed Feb 19 11:04:26 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/MdBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto
+    jobid: 6
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 1415472'.
+[Wed Feb 19 11:04:42 2025]
+Error in rule Alignement:
+    jobid: 8
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CMBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/HIM/CMBV_HIM.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415466
+
+Error executing rule Alignement on cluster (jobid: 8, external: Submitted batch job 1415466, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:04:52 2025]
+Error in rule Alignement:
+    jobid: 1
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CcBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/DRJ/CcBV_DRJ.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415465
+
+Error executing rule Alignement on cluster (jobid: 1, external: Submitted batch job 1415465, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:02 2025]
+Error in rule Alignement:
+    jobid: 2
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/MdBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/DRJ/MdBV_DRJ.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415467
+
+Error executing rule Alignement on cluster (jobid: 2, external: Submitted batch job 1415467, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:02 2025]
+Error in rule Alignement:
+    jobid: 5
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CcBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/HIM/CcBV_HIM.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415468
+
+Error executing rule Alignement on cluster (jobid: 5, external: Submitted batch job 1415468, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:22 2025]
+Error in rule Alignement:
+    jobid: 7
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/HdIV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/HIM/HdIV_HIM.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415469
+
+Error executing rule Alignement on cluster (jobid: 7, external: Submitted batch job 1415469, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:22 2025]
+Error in rule Alignement:
+    jobid: 3
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/HdIV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/DRJ/HdIV_DRJ.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415470
+
+Error executing rule Alignement on cluster (jobid: 3, external: Submitted batch job 1415470, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:32 2025]
+Error in rule Alignement:
+    jobid: 4
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CMBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/DRJ/CMBV_DRJ.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415471
+
+Error executing rule Alignement on cluster (jobid: 4, external: Submitted batch job 1415471, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 11:05:42 2025]
+Error in rule Alignement:
+    jobid: 6
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/MdBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto
+    shell:
+        
+        clustalo -v -i /beegfs/project/horizon/PDV_Segments/Data/HIM/MdBV_HIM.fa --out /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto --threads 4 --outfmt=st -t DNA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415472
+
+Error executing rule Alignement on cluster (jobid: 6, external: Submitted batch job 1415472, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gkhclts_/snakejob.Alignement.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-19T110412.184622.snakemake.log

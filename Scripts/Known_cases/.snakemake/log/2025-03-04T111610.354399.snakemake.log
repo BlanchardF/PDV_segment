@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/Snakemake_Mmseqs_search_CDS, line 34:
+Missing input files for rule all:
+    affected files:
+        /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Microplitis_demolitor/Microplitis_demolitor_mmseqs2_db
+        /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_congregata/Cotesia_congregata_mmseqs2_db
+        /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Hyposoter_didymator/Hyposoter_didymator_mmseqs2_db

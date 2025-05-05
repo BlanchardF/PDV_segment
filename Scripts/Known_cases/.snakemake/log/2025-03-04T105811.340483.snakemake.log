@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                count
+---------------  -------
+Create_db_Genes        4
+all                    1
+total                  5
+
+Select jobs to execute...
+
+[Tue Mar  4 10:58:32 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1419074'.
+
+[Tue Mar  4 10:58:33 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_congregata_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 1419075'.
+
+[Tue Mar  4 10:58:33 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Hyposoter_didymator_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator
+    wildcards: Species=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 1419076'.
+
+[Tue Mar  4 10:58:33 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_Microplitis_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    wildcards: Species=Cotesia_Microplitis
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1419077'.

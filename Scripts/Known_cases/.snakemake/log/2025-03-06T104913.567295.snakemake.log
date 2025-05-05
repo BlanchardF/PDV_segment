@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                count
+---------------  -------
+Create_db_Genes        1
+all                    1
+total                  2
+
+Select jobs to execute...
+
+[Thu Mar  6 10:49:44 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_Microplitis_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    wildcards: Species=Cotesia_Microplitis
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 1420374'.
+[Thu Mar  6 11:24:45 2025]
+Finished job 4.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Mar  6 11:24:46 2025]
+localrule all:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db
+    jobid: 0
+    reason: Input files updated by another job: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_Microplitis
+    resources: mem_mb=1246, mem_mib=1189, disk_mb=1246, disk_mib=1189, tmpdir=/tmp
+
+[Thu Mar  6 11:24:46 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-03-06T104913.567295.snakemake.log

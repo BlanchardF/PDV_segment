@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule Homology_analysis in file /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/Snakemake_Mmseqs_search_CDS, line 78:
+Missing input files for rule Homology_analysis:
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp
+    wildcards: Species=Cotesia_congregata
+    affected files:
+        /beegfs/project/horizon/PDV_Segments/Data/Segments/Genes_db/Genes_Cotesia_congregata

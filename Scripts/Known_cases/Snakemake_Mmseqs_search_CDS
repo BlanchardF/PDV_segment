@@ -1,0 +1,109 @@
+#Activate conda :
+## conda activate /beegfs/data/bguinet/Bguinet_conda
+
+#Import python packages :
+import pandas as pd
+import re
+import os
+
+#Command lines :
+##DRY run :
+#nohup snakemake -j 200  -s Snakemake_Mmseqs_search_CDS -n --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err} --qos=horizon --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_Mmseqs_search.out &
+##Unlock :
+#nohup snakemake -j 200  -s Snakemake_Mmseqs_search_CDS --unlock --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err} --qos=horizon ---constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_Mmseqs_search.out &
+##Real run :
+#nohup snakemake -j 200  -s Snakemake_Mmseqs_search_CDS --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err} --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_Mmseqs_search.out &
+
+#Software :
+mmseqs2="/beegfs/project/horizon/bin/miniconda3/bin/mmseqs" 
+
+#Data pathways :
+Genomes_paths="/beegfs/project/horizon/PDV_Segments/Data/Genomes/"
+Output_dir="/beegfs/project/horizon/PDV_Segments/Results/Known_cases/"
+Logs_dir="/beegfs/project/horizon/PDV_Segments/Logs/Known_cases/mmseqs"
+Scripts_dir="/beegfs/project/horizon/PDV_Segments/Scripts/Known_cases"
+DB_dir="/beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/" #Segment
+
+#Liste d'espèces :
+Species=["Cotesia_congregata", "Microplitis_demolitor", "Hyposoter_didymator","Cotesia_Microplitis"]  
+Genome=["Cotesia_congregata", "Microplitis_demolitor", "Hyposoter_didymator"]
+rule all:
+        input:
+                expand(Output_dir+"Genes_db/Genes_{Species}",Species = Species),
+                expand(Output_dir+"Genome_db/{Genome}_mmseqs2_db",Genome = Genome),
+                #expand(Output_dir+"run_mmseqs2/{Species}/{Species}_result_mmseqs2.m8",Species = Species)
+
+rule Create_db_Genes:
+        params:
+                threads="4",
+                time="00:10:00",
+                name="CreateDB_Genes",
+                mem="2G",
+                out=Logs_dir+"CreateDB_Genes_{Species}.out",
+                err=Logs_dir+"CreateDB_Genes_{Species}.error"
+        input:
+                DB=DB_dir+"{Species}.fa"
+        output:
+                Mmseqs_DB=Output_dir+"Genes_db/Genes_{Species}"
+        shell:
+                """
+                {mmseqs2} createdb {input.DB} {output.Mmseqs_DB}
+                """
+
+rule Create_db_Genome:
+        params:
+                threads="4",
+                time="00:10:00",
+                name="CreateDB_{Genome}",
+                mem="2000M",
+                out=Logs_dir+"CreateDB_{Genome}.out",
+                err=Logs_dir+"CreateDB_{Genome}.error"
+        input:
+                Genome=Genomes_paths+"{Genome}.fa"
+        output:
+                Mmseqs_DB=Output_dir+"Genome_db/{Genome}_mmseqs2_db"
+        shell:
+                """
+                {mmseqs2} createdb {input.Genome} {output.Mmseqs_DB}
+                """
+
+
+
+
+
+rule Homology_analysis:
+        params:
+                threads="4",
+                time="01:00:00",
+                mem="2G",
+                name="Mmseqs2_{Species}_Genes",
+                out=Logs_dir+"{Species}_Genes_Mmseqs_search.out",
+                err=Logs_dir+"{Species}_Genes_Mmseqs_search.error"
+        input:
+                Mmseqs_DB=Output_dir+"Genes_db/Genes_{Species}",
+                Mmseqs_Genome=Output_dir+"Genome_db/{Species}_mmseqs2_db"
+        output:
+                out=Output_dir+"run_mmseqs2/{Species}/{Species}_result_mmseqs2",
+                m8=Output_dir+"run_mmseqs2/{Species}/{Species}_result_mmseqs2.m8",
+                tmp=Output_dir+"un_mmseqs2/{Species}/{Species}_tmp"
+               
+        shell:
+                """
+                mkdir -p {Output_dir}run_mmseqs2/{wildcards.Species}
+                #Run mmseqs search
+                {mmseqs2} search \
+                {input.Mmseqs_DB} \
+                {input.Mmseqs_Genome} \
+                {output.out} \
+                {output.tmp} \
+                -a -s 7.5 -e 0.01  --search-type 3 --threads 4 
+
+
+                {mmseqs2} convertalis \
+                --format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov' \
+                {input.Mmseqs_DB} \
+                {input.Mmseqs_Genome} \
+                {output.out} \
+                {output.m8} \
+                --search-type 3
+                """

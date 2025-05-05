@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule Create_db_Genome in file /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/Snakemake_Mmseqs_search_CDS, line 57:
+Missing input files for rule Create_db_Genome:
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Cotesia_Microplitis/Cotesia_Microplitis_mmseqs2_db
+    wildcards: Species=Cotesia_Microplitis
+    affected files:
+        /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_Microplitis.fa

@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                count
+---------------  -------
+Create_db_Genes        1
+all                    1
+total                  2
+
+Select jobs to execute...
+
+[Tue Mar  4 11:43:49 2025]
+rule Create_db_Genes:
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 1419182'.
+[Tue Mar  4 11:44:43 2025]
+Error in rule Create_db_Genes:
+    jobid: 2
+    input: /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+    shell:
+        
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs createdb /beegfs/project/horizon/PDV_Segments/Data/Segments/Microplitis_demolitor_segments.fa /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419182
+
+Error executing rule Create_db_Genes on cluster (jobid: 2, external: Submitted batch job 1419182, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.isfud04k/snakejob.Create_db_Genes.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-04T114322.536814.snakemake.log

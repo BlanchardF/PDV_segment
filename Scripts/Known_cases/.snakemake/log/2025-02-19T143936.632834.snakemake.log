@@ -1,0 +1,235 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job             count
+------------  -------
+HMM_profiles        4
+HMM_search         10
+all                 1
+total              15
+
+Select jobs to execute...
+
+[Wed Feb 19 14:39:51 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm
+    jobid: 10
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 1415515'.
+
+[Wed Feb 19 14:39:51 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+    jobid: 23
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=HIM, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 23 with external jobid 'Submitted batch job 1415516'.
+
+[Wed Feb 19 14:39:51 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm
+    jobid: 12
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 12 with external jobid 'Submitted batch job 1415517'.
+
+[Wed Feb 19 14:39:51 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm
+    jobid: 14
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm
+    wildcards: Species=Microplitis_demolitor, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 14 with external jobid 'Submitted batch job 1415518'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_profiles:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm
+    jobid: 16
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 16 with external jobid 'Submitted batch job 1415519'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+    jobid: 18
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+    wildcards: Species=Cotesia_congregata, Motif=HIM, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 18 with external jobid 'Submitted batch job 1415520'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Cotesia_congregata.hmm
+    jobid: 22
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Cotesia_congregata.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 22 with external jobid 'Submitted batch job 1415521'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Cotesia_congregata.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Cotesia_congregata.hmm
+    jobid: 24
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Cotesia_congregata.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=HIM, target=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 24 with external jobid 'Submitted batch job 1415522'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+    jobid: 17
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+    wildcards: Species=Cotesia_congregata, Motif=DRJ, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 17 with external jobid 'Submitted batch job 1415523'.
+
+[Wed Feb 19 14:39:52 2025]
+rule HMM_search:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+    jobid: 21
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ, target=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 21 with external jobid 'Submitted batch job 1415524'.
+[Wed Feb 19 14:40:06 2025]
+Error in rule HMM_profiles:
+    jobid: 12
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm
+    shell:
+        
+                /beegfs/home/fblanchard/miniconda3/bin/hmmbuild --dna --cpu 4 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_DRJ_alignement.sto
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415517
+
+Error executing rule HMM_profiles on cluster (jobid: 12, external: Submitted batch job 1415517, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_profiles.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:16 2025]
+Error in rule HMM_profiles:
+    jobid: 10
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm
+    shell:
+        
+                /beegfs/home/fblanchard/miniconda3/bin/hmmbuild --dna --cpu 4 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_DRJ_alignement.sto
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415515
+
+Error executing rule HMM_profiles on cluster (jobid: 10, external: Submitted batch job 1415515, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_profiles.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:17 2025]
+Error in rule HMM_search:
+    jobid: 23
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_HIM.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-HIM-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415516
+
+Error executing rule HMM_search on cluster (jobid: 23, external: Submitted batch job 1415516, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_search.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:27 2025]
+Error in rule HMM_profiles:
+    jobid: 14
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm
+    shell:
+        
+                /beegfs/home/fblanchard/miniconda3/bin/hmmbuild --dna --cpu 4 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Microplitis_demolitor_HIM.hmm /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Microplitis_demolitor_HIM_alignement.sto
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415518
+
+Error executing rule HMM_profiles on cluster (jobid: 14, external: Submitted batch job 1415518, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_profiles.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:27 2025]
+Error in rule HMM_profiles:
+    jobid: 16
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm
+    shell:
+        
+                /beegfs/home/fblanchard/miniconda3/bin/hmmbuild --dna --cpu 4 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_Microplitis_HIM.hmm /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Alignement/Cotesia_Microplitis_HIM_alignement.sto
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415519
+
+Error executing rule HMM_profiles on cluster (jobid: 16, external: Submitted batch job 1415519, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_profiles.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:37 2025]
+Error in rule HMM_search:
+    jobid: 18
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_HIM.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-HIM-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415520
+
+Error executing rule HMM_search on cluster (jobid: 18, external: Submitted batch job 1415520, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_search.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:47 2025]
+Error in rule HMM_search:
+    jobid: 17
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Cotesia_congregata_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Cotesia_congregata-DRJ-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415523
+
+Error executing rule HMM_search on cluster (jobid: 17, external: Submitted batch job 1415523, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_search.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Feb 19 14:40:47 2025]
+Finished job 24.
+1 of 15 steps (7%) done
+[Wed Feb 19 14:40:57 2025]
+Finished job 22.
+2 of 15 steps (13%) done
+[Wed Feb 19 14:41:07 2025]
+Error in rule HMM_search:
+    jobid: 21
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm, /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+    shell:
+        
+        /beegfs/home/fblanchard/miniconda3/bin/nhmmer --dna --cpu 6 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Profile/Hyposoter_didymator_DRJ.hmm /beegfs/project/horizon/PDV_Segments/Data/Genomes/Microplitis_demolitor.fa > /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Search/Hyposoter_didymator-DRJ-Microplitis_demolitor.hmm
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1415524
+
+Error executing rule HMM_search on cluster (jobid: 21, external: Submitted batch job 1415524, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.gaxgi2vk/snakejob.HMM_search.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-19T143936.632834.snakemake.log

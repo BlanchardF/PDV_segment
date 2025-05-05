@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                  count
+-----------------  -------
+Homology_analysis        3
+all                      1
+total                    4
+
+Select jobs to execute...
+
+[Tue Mar  4 14:37:32 2025]
+rule Homology_analysis:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.index
+    jobid: 7
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.index
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+RuleException in rule Homology_analysis in file /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/Snakemake_Mmseqs_search_CDS, line 78:
+AttributeError: 'OutputFiles' object has no attribute 'flag', when formatting the following:
+
+                #Run mmseqs search
+                {mmseqs2} search                 {input.Mmseqs_DB}                 {input.Mmseqs_Genome}                 {output.out}                 {output.tmp}                 -a -s 7.5 -e 0.01  --search-type 3 --threads 4 
+
+
+                #{mmseqs2} convertalis                 #--format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov'                 #{input.Mmseqs_DB}                 #{input.Mmseqs_Genome}                 #{output.out}                 #{output.m8}                 #--search-type 3
+
+                #touch {output.flag}
+
+                

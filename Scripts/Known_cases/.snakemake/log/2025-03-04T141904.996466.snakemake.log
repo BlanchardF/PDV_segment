@@ -1,0 +1,116 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job                  count
+-----------------  -------
+Homology_analysis        3
+all                      1
+total                    4
+
+Select jobs to execute...
+
+[Tue Mar  4 14:19:32 2025]
+rule Homology_analysis:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_flag.txt
+    jobid: 7
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_flag.txt
+    wildcards: Species=Cotesia_congregata
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 7 with external jobid 'Submitted batch job 1419238'.
+
+[Tue Mar  4 14:19:32 2025]
+rule Homology_analysis:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_flag.txt
+    jobid: 8
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_flag.txt
+    wildcards: Species=Microplitis_demolitor
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 8 with external jobid 'Submitted batch job 1419239'.
+
+[Tue Mar  4 14:19:33 2025]
+rule Homology_analysis:
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_flag.txt
+    jobid: 9
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_flag.txt
+    wildcards: Species=Hyposoter_didymator
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 1419240'.
+[Tue Mar  4 14:21:25 2025]
+Error in rule Homology_analysis:
+    jobid: 7
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_flag.txt
+    shell:
+        
+                #Run mmseqs search
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs search                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp                 -a -s 7.5 -e 0.01  --search-type 3 --threads 4 --remove-tmp-files
+
+
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs convertalis                 --format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov'                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Cotesia_congregata                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Cotesia_congregata_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_result_mmseqs2.m8                 --search-type 3
+
+                touch /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_flag.txt
+
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419238
+
+Error executing rule Homology_analysis on cluster (jobid: 7, external: Submitted batch job 1419238, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.y_kvz8sz/snakejob.Homology_analysis.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Homology_analysis since they might be corrupted:
+/beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp
+Skipped removing non-empty directory /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Cotesia_congregata_tmp
+[Tue Mar  4 14:21:35 2025]
+Error in rule Homology_analysis:
+    jobid: 8
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_flag.txt
+    shell:
+        
+                #Run mmseqs search
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs search                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_tmp                 -a -s 7.5 -e 0.01  --search-type 3 --threads 4 --remove-tmp-files
+
+
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs convertalis                 --format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov'                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Microplitis_demolitor                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Microplitis_demolitor_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_result_mmseqs2.m8                 --search-type 3
+
+                touch /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_flag.txt
+
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419239
+
+Error executing rule Homology_analysis on cluster (jobid: 8, external: Submitted batch job 1419239, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.y_kvz8sz/snakejob.Homology_analysis.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Homology_analysis since they might be corrupted:
+/beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_tmp
+Skipped removing non-empty directory /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Microplitis_demolitor_tmp
+[Tue Mar  4 14:25:16 2025]
+Error in rule Homology_analysis:
+    jobid: 9
+    input: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2.m8, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_tmp, /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_flag.txt
+    shell:
+        
+                #Run mmseqs search
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs search                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_tmp                 -a -s 7.5 -e 0.01  --search-type 3 --threads 4 --remove-tmp-files
+
+
+                /beegfs/project/horizon/bin/miniconda3/bin/mmseqs convertalis                 --format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov'                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genes_db/Genes_Hyposoter_didymator                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/Genome_db/Hyposoter_didymator_mmseqs2_db                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2                 /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_result_mmseqs2.m8                 --search-type 3
+
+                touch /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_flag.txt
+
+                
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 1419240
+
+Error executing rule Homology_analysis on cluster (jobid: 9, external: Submitted batch job 1419240, jobscript: /beegfs/project/horizon/PDV_Segments/Scripts/Known_cases/.snakemake/tmp.y_kvz8sz/snakejob.Homology_analysis.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Homology_analysis since they might be corrupted:
+/beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_tmp
+Skipped removing non-empty directory /beegfs/project/horizon/PDV_Segments/Results/Known_cases/run_mmseqs2/Hyposoter_didymator_tmp
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-04T141904.996466.snakemake.log

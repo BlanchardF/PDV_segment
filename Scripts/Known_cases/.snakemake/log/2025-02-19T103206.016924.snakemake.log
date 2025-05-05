@@ -1,0 +1,111 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 200
+Job stats:
+job             count
+------------  -------
+Alignement          8
+HMM_profiles        8
+all                 1
+total              17
+
+Select jobs to execute...
+
+[Wed Feb 19 10:32:23 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CcBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto
+    jobid: 1
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_DRJ_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CMBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto
+    jobid: 8
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_HIM_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/MdBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto
+    jobid: 2
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_DRJ_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/CcBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto
+    jobid: 5
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_congregata_HIM_alignement.sto
+    wildcards: Species=Cotesia_congregata, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/HdIV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto
+    jobid: 7
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_HIM_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/HdIV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto
+    jobid: 3
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Hyposoter_didymator_DRJ_alignement.sto
+    wildcards: Species=Hyposoter_didymator, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/DRJ/CMBV_DRJ.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto
+    jobid: 4
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Cotesia_Microplitis_DRJ_alignement.sto
+    wildcards: Species=Cotesia_Microplitis, Motif=DRJ
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+
+[Wed Feb 19 10:32:24 2025]
+rule Alignement:
+    input: /beegfs/project/horizon/PDV_Segments/Data/HIM/MdBV_HIM.fa
+    output: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto
+    jobid: 6
+    reason: Missing output files: /beegfs/project/horizon/PDV_Segments/Results/Known_casesAlignement/Microplitis_demolitor_HIM_alignement.sto
+    wildcards: Species=Microplitis_demolitor, Motif=HIM
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Error submitting jobscript (exit code 1):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-19T103206.016924.snakemake.log

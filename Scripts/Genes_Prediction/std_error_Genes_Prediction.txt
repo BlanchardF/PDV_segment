@@ -1,0 +1,1 @@
+mkdir: impossible de créer le répertoire « {/beegfs/project/horizon/PDV_Segments/Data/Segments/Cotesia_icipe_tempFolder} »: Aucun fichier ou dossier de ce type
