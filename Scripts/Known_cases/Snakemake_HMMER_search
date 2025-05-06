@@ -115,7 +115,7 @@ rule HMM_search:
         out=Output_dir+"Search/{Species}-{Motif}-{target}.hmm"  
     shell:
         """
-        {nHMMER} --dna --cpu {params.threads} {input.Profile} {input.Genome} > {output.out}
+        {nHMMER} --dna --cpu {params.threads} --tblout {output.out} {input.Profile} {input.Genome}
         """
 
 rule all_HMM_search:
