@@ -1,0 +1,369 @@
+#Command lines :
+##DRY run :
+#nohup snakemake -j 200  -s Snakemake_search_PDV -n --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err}  --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_search_PDV.out &
+##Unlock :
+#nohup snakemake -j 200  -s Snakemake_search_PDV --unlock --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err} ---constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_search_PDV.out &
+##Real run :
+#nohup snakemake -j 200  -s Snakemake_search_PDV --cluster " sbatch -J {params.name} -t {params.time} --mem {params.mem} --cpus-per-task {params.threads} -o {params.out} -e {params.err}  --constraint=haswell --exclude=pbil-deb27 " &> nohup_Snakemake_search_PDV.out &
+
+
+
+#Software :
+Clustal_Omega="/beegfs/home/fblanchard/miniconda3/bin/clustalo"
+HMMbuild="/beegfs/home/fblanchard/miniconda3/bin/hmmbuild"
+nHMMER="/beegfs/home/fblanchard/miniconda3/bin/nhmmer"
+mmseqs2="/beegfs/project/horizon/bin/miniconda3/bin/mmseqs" 
+
+#Paths
+Output_dir="/beegfs/project/horizon/PDV_Segments/Results/Search_PDV/"
+Logs_dir="/beegfs/project/horizon/PDV_Segments/Logs/Search_PDV/"
+Genes="/beegfs/project/horizon/PDV_Segments/Data/Genes_Proteins/Clean_Data/"
+scripts_dir="/beegfs/project/horizon/PDV_Segments/Scripts/Search_PDV/"
+
+#Liste d'espèces
+species_dict = {}
+with open("/beegfs/project/horizon/PDV_Segments/List/list_BV.txt", "r") as f:
+    for line in f:
+        if line.strip():
+            sp, label = line.strip().split("\t")
+            species_dict[sp] = label
+
+#Genomes Paths
+input_paths = {
+    "horizon": lambda sp: f"/beegfs/project/horizon/data/assembly/species/{sp}/gnm.fna",
+    "assemblage": lambda sp: f"/beegfs/project/horizon/PDV_Segments/Data/Genomes/{sp}.fa"}
+
+rule all:
+    input:
+        # Taille des contigs
+        expand(Output_dir + "contig_sizes/{species}_sizes.tsv", species=list(species_dict.keys())),
+
+        # Alignements HMM DRJ et HIM
+        Output_dir + "DRJ/Profil/DRJ_alignement.sto",
+        Output_dir + "HIM/Profil/HIM_alignement.sto",
+
+        # Profils HMM DRJ et HIM
+        Output_dir + "DRJ/Profil/BV_DRJ.hmm",
+        Output_dir + "HIM/Profil/BV_HIM.hmm",
+
+        # Résultats de recherche HMM pour toutes les espèces
+        expand(Output_dir + "Search/{species}_HIM.hmm", species=list(species_dict.keys())),
+        expand(Output_dir + "Search/{species}_DRJ.hmm", species=list(species_dict.keys())),
+
+        # Base de données mmseqs2 pour les gènes BV
+        Output_dir + "Genes_db/Genes_BV",
+
+        # Base de données mmseqs2 pour les génomes
+        expand(Output_dir + "Genome_db/{species}_mmseqs2_db", species=list(species_dict.keys())),
+
+        # Fichiers de complétion de l’analyse d’homologie mmseqs2
+        expand(Output_dir + "run_mmseqs2_BV/{species}/{species}_mmseqs2.done", species=list(species_dict.keys())),
+
+        # Résultats convertalis mmseqs2
+        expand(Output_dir + "run_mmseqs2_BV/{species}/{species}_result_mmseqs2.m8", species=list(species_dict.keys())),
+
+        # Transformer les résultats de rechereche de  HMM et DRJ en tsv propre 
+        expand(Output_dir + "Search/Clean/{species}_DRJ_Clean.tsv", species=list(species_dict.keys())),
+        expand(Output_dir + "Search/Clean/{species}_HIM_Clean.tsv", species=list(species_dict.keys()))
+
+
+rule Taille_contigs:
+    params:
+        threads="4",
+        time="00:10:00",
+        mem="2G",
+        name=lambda wildcards: f"Taille_contigs_{wildcards.species}",
+        label=lambda wildcards: species_dict[wildcards.species],
+        out=lambda wildcards: Logs_dir + f"Taille_contigs_{wildcards.species}.out",
+        err=lambda wildcards: Logs_dir + f"Taille_contigs_{wildcards.species}.error"
+    input:
+        fasta=lambda wildcards: input_paths[species_dict[wildcards.species]](wildcards.species)
+    output:
+        size=Output_dir + "contig_sizes/{species}_sizes.tsv"
+
+
+    shell:
+        """
+        awk '/^>/ {{if (seq) print name"\\t"length(seq); name=substr($1, 2); seq=""}} !/^>/ {{seq=seq $0}} END {{print name"\\t"length(seq)}}' {input.fasta} > {output.size}
+        """
+
+
+rule Alignement_HMM_DRJ:
+    params:
+        threads="4",
+        time="01:00:00",
+        mem="2G",
+        name="Ali_DRJ",
+        out=Logs_dir+"Ali_DRJ.out",
+        err=Logs_dir+"Ali_DRJ.error"
+    input:
+        DRJ= "/beegfs/project/horizon/PDV_Segments/Data/DRJ/All_BV_DRJ.fa"
+
+    output:
+        out=Output_dir+"DRJ/Profil/DRJ_alignement.sto"
+    shell:
+        """
+        {Clustal_Omega} -v -i {input} --out {output.out} --threads {params.threads} --outfmt=st -t DNA
+        """
+
+
+rule Alignement_HMM_HIM:
+    params:
+        threads="4",
+        time="01:00:00",
+        mem="2G",
+        name="Ali_HIM",
+        out=Logs_dir+"Ali_HIM.out",
+        err=Logs_dir+"Ali_HIM.error"
+    input:
+        HIM= "/beegfs/project/horizon/PDV_Segments/Data/HIM/All_BV_HIM.fa"
+
+    output:
+        out=Output_dir+"HIM/Profil/HIM_alignement.sto"
+    shell:
+        """
+        {Clustal_Omega} -v -i {input} --out {output.out} --threads {params.threads} --outfmt=st -t DNA
+        """
+
+rule Profil_HMM_DRJ:
+    params:
+        threads="4",
+        time="01:00:00",
+        mem="2G",
+        name="Profil_HMM_DRJ",
+        out=Logs_dir+"Profil_HMM_DRJ.out",
+        err=Logs_dir+"Profil_HMM_DRJ.error"
+    input:
+        DRJ= Output_dir+"DRJ/Profil/DRJ_alignement.sto"
+    output:
+        DRJ=Output_dir + "DRJ/Profil/BV_DRJ.hmm"
+    shell:
+        """
+        {HMMbuild} --dna --cpu 4 {output.DRJ} {input.DRJ}  
+        """
+
+
+rule Profil_HMM_HIM:
+    params:
+        threads="4",
+        time="01:00:00",
+        mem="2G",
+        name="Profil_HMM_HIM",
+        out=Logs_dir+"Profil_HMM.out",
+        err=Logs_dir+"Profil_HMM.error"
+    input:
+        HIM= Output_dir+"HIM/Profil/HIM_alignement.sto"
+    output:
+        HIM=Output_dir + "HIM/Profil/BV_HIM.hmm"
+    shell:
+        """
+        {HMMbuild} --dna --cpu 4 {output.HIM} {input.HIM}       
+        """
+
+
+
+
+
+rule HMM_search_HIM:
+    params:
+        threads="6",
+        time="01:00:00",
+        mem="2G",
+        name="HMMsearch_{species}_HIM",
+        out=Logs_dir+"HMMsearch_HIM_{species}.out",
+        err=Logs_dir+"HMMsearch_HIM_{species}.error"
+    input:
+        Profile=Output_dir + "HIM/Profil/BV_HIM.hmm",
+        Genome=lambda wildcards: input_paths[species_dict[wildcards.species]](wildcards.species)
+    output:
+        out=Output_dir+"Search/{species}_HIM.hmm"  
+    shell:
+        """
+        {nHMMER} --dna --cpu {params.threads} --tblout {output.out} {input.Profile} {input.Genome}
+        """
+
+
+
+rule HMM_search_DRJ:
+    params:
+        threads="6",
+        time="01:00:00",
+        mem="2G",
+        name="HMMsearch_{species}_DRJ",
+        out=Logs_dir+"HMMsearch_DRJ_{species}.out",
+        err=Logs_dir+"HMMsearch_DRJ_{species}.error"
+    input:
+        Profile=Output_dir + "DRJ/Profil/BV_DRJ.hmm",
+        Genome=lambda wildcards: input_paths[species_dict[wildcards.species]](wildcards.species)
+    output:
+        out=Output_dir+"Search/{species}_DRJ.hmm"  
+    shell:
+        """
+        {nHMMER} --dna --cpu {params.threads} --tblout {output.out} {input.Profile} {input.Genome}
+        """
+
+
+
+
+rule Create_db_Genes:
+        params:
+                threads="4",
+                time="00:10:00",
+                name="CreateDB_Genes",
+                mem="2G",
+                out=Logs_dir+"CreateDB_Genes.out",
+                err=Logs_dir+"CreateDB_Genes.error"
+        input:
+                DB=Genes+"All_BV_genes.fa"
+        output:
+                Mmseqs_DB=Output_dir+"Genes_db/Genes_BV"
+        shell:
+                """
+                {mmseqs2} createdb {input.DB} {output.Mmseqs_DB}
+                """
+
+
+
+rule Create_db_Genome:
+        params:
+                threads="4",
+                time="00:10:00",
+                name=lambda wildcards: f"CreateDB_{wildcards.species}",
+                mem="2000M",
+                out=Logs_dir+"CreateDB_{species}.out",
+                err=Logs_dir+"CreateDB_{species}.error"
+        input:
+                Genome=lambda wildcards: input_paths[species_dict[wildcards.species]](wildcards.species)
+        output:
+                Mmseqs_Genome=Output_dir+"Genome_db/{species}_mmseqs2_db"
+        shell:
+                """
+                {mmseqs2} createdb {input.Genome} {output.Mmseqs_Genome}
+                """
+
+rule Homology_analysis:
+        params:
+                threads="4",
+                time="03:00:00",
+                mem="2G",
+                name="Mmseqs2_{species}_Genes",
+                out=Logs_dir+"Genes_Mmseqs_search_{species}.out",
+                err=Logs_dir+"Genes_Mmseqs_search_{species}.error"
+        input:
+                Mmseqs_DB=Output_dir+"Genes_db/Genes_BV",
+                Mmseqs_Genome=Output_dir+"Genome_db/{species}_mmseqs2_db",
+        output:
+                done=Output_dir+"run_mmseqs2_BV/{species}/{species}_mmseqs2.done"
+                       
+        shell:
+                """
+                mkdir -p {Output_dir}run_mmseqs2_BV/{wildcards.species}
+                {mmseqs2} search \
+                {input.Mmseqs_Genome} \
+                {input.Mmseqs_DB} \
+                {Output_dir}run_mmseqs2_BV/{wildcards.species}/{wildcards.species}_result_mmseqs2 \
+                {Output_dir}run_mmseqs2_BV/{wildcards.species}/{wildcards.species}_tmp \
+                -a -s 7.5 -e 0.01 --search-type 3 --threads {params.threads}
+
+                touch {output.done}
+                """
+
+
+rule convertalis:
+        params:
+                threads="4",
+                time="01:00:00",
+                mem="2G",
+                name="Mmseqs2_{species}_convertalis",
+                out=Logs_dir+"Mmseqs_convertalis_{species}.out",
+                err=Logs_dir+"Mmseqs_convertalis_{species}.error"
+        input:
+                Mmseqs_DB=Output_dir+"Genes_db/Genes_BV",
+                Mmseqs_Genome=Output_dir+"Genome_db/{species}_mmseqs2_db",
+                done=Output_dir+"run_mmseqs2_BV/{species}/{species}_mmseqs2.done",
+        output:
+                Output_dir + "run_mmseqs2_BV/{species}/{species}_result_mmseqs2.m8",
+    
+        shell:
+                """
+                {mmseqs2} convertalis \
+                --format-output 'query,qlen,tlen,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qaln,tcov' \
+                {input.Mmseqs_Genome} \
+                {input.Mmseqs_DB} \
+                {Output_dir}run_mmseqs2_BV/{wildcards.species}/{wildcards.species}_result_mmseqs2 \
+                {output} \
+                --search-type 3
+                """
+
+
+rule Clean_DRJ:
+        params:
+                threads="4",
+                time="00:01:00",
+                name="Clean_DRJ_{species}",
+                mem="1G",
+                out=Logs_dir+"Clean_DRJ_{species}.out",
+                err=Logs_dir+"Clean_DRJ_{species}.error"
+        input:
+                DRJ=Output_dir+"Search/{species}_DRJ.hmm"
+        output:
+                DRJ_Clean=Output_dir+"Search/Clean/{species}_DRJ_Clean.tsv"
+        shell:
+                """
+                awk '!/^#/ && NF > 0 {{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11"\t"$12"\t"$13"\t"$14"\t"$15"\t"$16}}' {input.DRJ} > {output.DRJ_Clean}
+                """
+
+
+rule Clean_HIM:
+        params:
+                threads="4",
+                time="00:01:00",
+                name="Clean_HIM_{species}",
+                mem="1G",
+                out=Logs_dir+"Clean_HIM_{species}.out",
+                err=Logs_dir+"Clean_HIM_{species}.error"
+        input:
+                HIM=Output_dir+"Search/{species}_HIM.hmm"
+        output:
+                HIM_Clean=Output_dir+"Search/Clean/{species}_HIM_Clean.tsv"
+        shell:
+                """
+                awk '!/^#/ && NF > 0 {{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11"\t"$12"\t"$13"\t"$14"\t"$15"\t"$16}}' {input.HIM} > {output.HIM_Clean}
+                """
+
+
+
+
+rule Search_PDV:   
+        params:
+                threads="4",
+                time="00:15:00",
+                name="Search_PDV_{species}",
+                mem="4G",
+                out=Logs_dir+"Search_PDV_{species}.out",
+                err=Logs_dir+"Search_PDV_{species}.error"
+        input:
+                Result_mmseqs2=Output_dir+"",
+                DRJ=Output_dir+"Search_PDV/Search/Clean/{species}_Clean.tsv",
+                HIM=Output_dir+"Search_PDV/Search/Clean/{species}_Clean.tsv",
+                Taille_contigs=Output_dir+"contig_sizes/{species}_sizes.tsv"
+        output:
+                Plot=Output_dir+"Results/{species}/{species}_CG_plot.svg",
+                Plot_jpg=Output_dir+"Results/{species}/{species}_CG_plot.jpg",
+                Full_tab=Output_dir+"Results/{species}/{species}_Full_tab.tsv"
+        shell:
+                """
+                mkdir -p {Output_dir}Results/{wildcards.species}
+                
+
+                /beegfs/data/soft/R-4.3.1/bin/Rscript {scripts_dir}Search_PDV.R \
+                --input_Result_mmseqs2 {input.Result_mmseqs2} \
+                --input_HIM {input.HIM}  \
+                --input_DRJ {input.DRJ} \
+                --input_Taille_contigs {input.Taille_contigs} \
+                
+                --output_Plot {output.Plot} \
+                --output_Plot_jpg {output.Plot_jpg} \
+                --output_tab {output.Full_tab}
+
+                """
